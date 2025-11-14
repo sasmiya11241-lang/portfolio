@@ -4,4 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def hello(request):
-    return HttpResponse("Hello Django!")
+    try:
+        return render(request, 'hello.html')
+    except Exception as e:
+        return HttpResponse(str(e))
